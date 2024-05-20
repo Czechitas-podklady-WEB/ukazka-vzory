@@ -8,8 +8,8 @@ export const List = () => {
   useEffect(() => {
     const fetchItems = async () => {
       const response = await fetch('http://localhost:4000/api/items');
-      const data = await response.json();
-      setItems(data.result);
+      const json = await response.json();
+      setItems(json.data);
     };
 
     fetchItems();
